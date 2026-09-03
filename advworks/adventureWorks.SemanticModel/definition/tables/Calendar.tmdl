@@ -1,0 +1,44 @@
+table Calendar
+	lineageTag: 25962f03-7a04-4e76-a166-a0671135e700
+	dataCategory: Time
+
+	column Date
+		isKey
+		lineageTag: ce0b8138-09dd-47fe-9c18-227dd64f292d
+		isNameInferred
+		sourceColumn: [Date]
+
+	column Year
+		lineageTag: 1e51131e-2c0f-4da5-8e72-3a2414fd3a3a
+		isNameInferred
+		sourceColumn: [Year]
+
+	column MonthNumber
+		lineageTag: b063c879-90e9-41d4-a089-45133bd0c06d
+		isNameInferred
+		sourceColumn: [MonthNumber]
+
+	column MonthName
+		lineageTag: 112b6ed7-c4c7-4a10-8023-69e9f05492e3
+		isNameInferred
+		sourceColumn: [MonthName]
+
+	column MonthShort
+		lineageTag: 4c4ed248-8fc0-4cfb-94a6-71c4485c5196
+		isNameInferred
+		sourceColumn: [MonthShort]
+
+	column Quarter
+		lineageTag: 9bc304c4-1887-4ca8-805c-4ab17b5f547f
+		isNameInferred
+		sourceColumn: [Quarter]
+
+	column YearMonth
+		lineageTag: 6423bb8e-fc8b-452b-b1bf-cf4a0f420d10
+		isNameInferred
+		sourceColumn: [YearMonth]
+
+	partition Calendar = calculated
+		mode: import
+		source = ADDCOLUMNS(CALENDAR(DATE(2022,1,1), DATE(2025,12,31)), "Year", YEAR([Date]), "MonthNumber", MONTH([Date]), "MonthName", FORMAT([Date], "MMMM"), "MonthShort", FORMAT([Date], "mmm"), "Quarter", "Q" & FORMAT([Date], "Q"), "YearMonth", FORMAT([Date], "YYYY-MM"))
+

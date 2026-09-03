@@ -1,0 +1,18 @@
+table DimLocation
+	lineageTag: 42232c26-3684-42ba-b189-8e6b73396067
+
+	column LocationID
+		dataType: int64
+		isKey
+		lineageTag: bdf0ec45-8f04-4e17-996b-d0a504f578e4
+		sourceColumn: LocationID
+
+	column LocationName
+		dataType: string
+		lineageTag: a27dca3f-fa47-467f-b2c0-c38074f32470
+		sourceColumn: LocationName
+
+	partition DimLocation = m
+		mode: import
+		source = let Source = Sql.Database("localhost", "AdventureWorks"), Query = Value.NativeQuery(Source, "SELECT LocationID, Name AS LocationName FROM Production.Location") in Query
+

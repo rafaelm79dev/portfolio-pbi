@@ -153,7 +153,7 @@ This project is under the MIT License - see the [LICENSE](LICENSE) file for deta
 
 ## 👤 Author
 
-**Your Name**
+**Rafael Morales**
 - GitHub: [@rafaelm79dev](https://github.com/rafaelm79dev)
 - LinkedIn: [Rafael Morales](https://www.linkedin.com/in/rafaelm79)
 

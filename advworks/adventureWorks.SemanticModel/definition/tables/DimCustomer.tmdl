@@ -1,0 +1,53 @@
+table DimCustomer
+	lineageTag: e57da185-fe4c-40a9-852f-163e9d703037
+
+	measure 'Customer Count' = DISTINCTCOUNT(DimCustomer[CustomerID])
+		formatString: #,##0
+		displayFolder: Key Measures
+		lineageTag: 338d582e-23a6-4d3d-861d-fe1e9a386112
+
+	measure 'Store Customer Count' = CALCULATE([Customer Count], DimCustomer[CustomerType] = "Store")
+		formatString: #,##0
+		displayFolder: Key Measures
+		lineageTag: 7f31607e-8e21-4079-9360-daf664946921
+
+	measure 'Individual Customer Count' = CALCULATE([Customer Count], DimCustomer[CustomerType] = "Individual")
+		formatString: #,##0
+		displayFolder: Key Measures
+		lineageTag: ae3cb120-7b58-4b62-a11e-8d3ad4278986
+
+	column CustomerID
+		dataType: int64
+		isKey
+		lineageTag: 7a2a91a7-a440-4aab-90f9-a97e162106b7
+		sourceColumn: CustomerID
+
+	column PersonID
+		dataType: int64
+		lineageTag: fb3a3433-6cf3-424f-8304-8be0829b8acd
+		sourceColumn: PersonID
+
+	column StoreID
+		dataType: int64
+		lineageTag: 46d8b720-fe21-4644-9ac6-282da8bb0cd6
+		sourceColumn: StoreID
+
+	column TerritoryID
+		dataType: int64
+		lineageTag: 38bc34de-bd4b-4b9a-993f-c2366f92801e
+		sourceColumn: TerritoryID
+
+	column CustomerName
+		dataType: string
+		lineageTag: b3b8600b-4aae-4314-9a2d-41be39ab1c9c
+		sourceColumn: CustomerName
+
+	column CustomerType
+		dataType: string
+		lineageTag: 3e00a6e1-4347-405d-882a-bd379e95eb01
+		sourceColumn: CustomerType
+
+	partition DimCustomer = m
+		mode: import
+		source = let Source = Sql.Database("localhost", "AdventureWorks"), Query = Value.NativeQuery(Source, "SELECT c.CustomerID, c.PersonID, c.StoreID, c.TerritoryID, CASE WHEN c.StoreID IS NOT NULL THEN s.Name WHEN c.PersonID IS NOT NULL THEN CONCAT(p.FirstName, ' ', p.LastName) ELSE 'Unknown' END AS CustomerName, CASE WHEN c.StoreID IS NOT NULL THEN 'Store' ELSE 'Individual' END AS CustomerType FROM Sales.Customer c LEFT JOIN Person.Person p ON c.PersonID = p.BusinessEntityID LEFT JOIN Sales.Store s ON c.StoreID = s.BusinessEntityID") in Query
+

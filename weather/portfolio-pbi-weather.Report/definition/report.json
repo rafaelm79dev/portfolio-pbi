@@ -1,0 +1,121 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.2.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY25SU11",
+      "reportVersionAtImport": {
+        "visual": "2.4.0",
+        "report": "3.0.0",
+        "page": "2.3.0"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Custom3752901960427101.json",
+      "reportVersionAtImport": {
+        "visual": "2.4.0",
+        "report": "3.0.0",
+        "page": "2.3.0"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "htmlContent443BE3AD55E043BF878BED274D3A6865"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY25SU11",
+          "path": "BaseThemes/CY25SU11.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Custom3752901960427101.json",
+          "path": "Custom3752901960427101.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "Group_2_(28)_(2)9519539782369569.png",
+          "path": "Group_2_(28)_(2)9519539782369569.png",
+          "type": "Image"
+        },
+        {
+          "name": "humidity04471838461382038.png",
+          "path": "humidity04471838461382038.png",
+          "type": "Image"
+        },
+        {
+          "name": "location06671815321539198.png",
+          "path": "location06671815321539198.png",
+          "type": "Image"
+        },
+        {
+          "name": "profile_github07551621518412999.png",
+          "path": "profile_github07551621518412999.png",
+          "type": "Image"
+        },
+        {
+          "name": "thermometer_(1)2607463270499688.png",
+          "path": "thermometer_(1)2607463270499688.png",
+          "type": "Image"
+        },
+        {
+          "name": "uv-index5190313401657858.png",
+          "path": "uv-index5190313401657858.png",
+          "type": "Image"
+        },
+        {
+          "name": "windy43438142248732303.png",
+          "path": "windy43438142248732303.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

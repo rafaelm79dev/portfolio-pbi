@@ -1,0 +1,123 @@
+table Fact_Sales
+	lineageTag: 95b9a6f3-d7c3-4490-b989-9888719fbd0c
+
+	measure 'Total Sales' = SUM(Fact_Sales[LineTotal])
+		formatString: $#,##0
+		displayFolder: Key Measures
+		lineageTag: d6320452-c662-40fa-8dbc-3627e93fca9a
+
+	measure 'Total Quantity' = SUM(Fact_Sales[OrderQty])
+		formatString: #,##0
+		displayFolder: Key Measures
+		lineageTag: bc3e2e3d-ec77-4afa-b0c5-a2ebab741e07
+
+	measure 'Order Count' = DISTINCTCOUNT(Fact_Sales[SalesOrderID])
+		formatString: #,##0
+		displayFolder: Key Measures
+		lineageTag: 34b40bd2-4b41-4c26-b090-0d38282b2192
+
+	measure 'Total Cost' = SUMX(Fact_Sales, Fact_Sales[OrderQty] * RELATED(DimProduct[StandardCost]))
+		formatString: $#,##0
+		displayFolder: Margin
+		lineageTag: 4aa4857e-4851-464e-8fa2-06dd0c5ade35
+
+	measure 'Gross Margin' = [Total Sales] - [Total Cost]
+		formatString: $#,##0
+		displayFolder: Margin
+		lineageTag: 3a4bdd89-c3b3-4823-8dcc-0a255b7bd2d9
+
+	measure 'Gross Margin %' = DIVIDE([Gross Margin], [Total Sales])
+		formatString: 0.0%
+		displayFolder: Margin
+		lineageTag: cfd74ac7-54df-4a4d-9947-dcca40b8983e
+
+	measure 'Avg Order Value' = DIVIDE([Total Sales], [Order Count])
+		formatString: $#,##0
+		displayFolder: Key Measures
+		lineageTag: acaedee7-bb40-4f45-87b7-bb155b697df0
+
+	measure 'Sales YTD' = TOTALYTD([Total Sales], Calendar[Date])
+		formatString: $#,##0
+		displayFolder: Time Intelligence
+		lineageTag: c9442364-34a0-41be-8e45-bebbd285a6fd
+
+	measure 'Sales PY' = CALCULATE([Total Sales], SAMEPERIODLASTYEAR(Calendar[Date]))
+		formatString: $#,##0
+		displayFolder: Time Intelligence
+		lineageTag: f198706b-2538-43c9-8498-3c0b14ffbaff
+
+	measure 'Sales YoY %' = DIVIDE([Total Sales] - [Sales PY], [Sales PY])
+		formatString: 0.0%
+		displayFolder: Time Intelligence
+		lineageTag: 32cdc859-baaa-4898-ad79-65682442b911
+
+	column SalesOrderID
+		dataType: int64
+		lineageTag: 54e85a5b-13e9-41fd-a758-463f4db3f4c3
+		sourceColumn: SalesOrderID
+
+	column SalesOrderDetailID
+		dataType: int64
+		isKey
+		lineageTag: 766deb5e-eba8-44b4-843b-adf0a1061cbb
+		sourceColumn: SalesOrderDetailID
+
+	column OrderDate
+		dataType: dateTime
+		lineageTag: 26c68abb-48de-48d3-ba93-d246c8dcd2f0
+		sourceColumn: OrderDate
+
+	column DueDate
+		dataType: dateTime
+		lineageTag: 6ca51770-412a-4c85-bdac-4d06f7a49375
+		sourceColumn: DueDate
+
+	column ShipDate
+		dataType: dateTime
+		lineageTag: 80afd53f-618e-4cb0-9c0d-7b82d631bcdd
+		sourceColumn: ShipDate
+
+	column CustomerID
+		dataType: int64
+		lineageTag: 7fa065f0-19d8-4eab-8342-5679f0d866bd
+		sourceColumn: CustomerID
+
+	column TerritoryID
+		dataType: int64
+		lineageTag: ba9f606b-a555-4f6a-8ff7-63a1bde1b226
+		sourceColumn: TerritoryID
+
+	column OnlineOrderFlag
+		dataType: boolean
+		lineageTag: a1eec0ec-9134-4b99-9cb1-2e42316d2f31
+		sourceColumn: OnlineOrderFlag
+
+	column ProductID
+		dataType: int64
+		lineageTag: 685f42db-4a07-4484-9573-bec04d7f9ba6
+		sourceColumn: ProductID
+
+	column OrderQty
+		dataType: int64
+		lineageTag: 63f87640-94cd-4268-a71b-0295b2d81926
+		sourceColumn: OrderQty
+
+	column UnitPrice
+		dataType: double
+		lineageTag: 56fa8bdd-70a9-4e5e-92c9-3573277a509b
+		sourceColumn: UnitPrice
+
+	column UnitPriceDiscount
+		dataType: double
+		lineageTag: 68aec3bc-c876-472f-befb-2f0225547162
+		sourceColumn: UnitPriceDiscount
+
+	column LineTotal
+		dataType: double
+		lineageTag: 7e65fa0d-b9fd-48a9-8337-ba119bb8c476
+		sourceColumn: LineTotal
+
+	partition Fact_Sales = m
+		mode: import
+		source = let Source = Sql.Database("localhost", "AdventureWorks"), Query = Value.NativeQuery(Source, "SELECT d.SalesOrderID, d.SalesOrderDetailID, h.OrderDate, h.DueDate, h.ShipDate, h.CustomerID, h.TerritoryID, h.OnlineOrderFlag, d.ProductID, d.OrderQty, d.UnitPrice, d.UnitPriceDiscount, d.LineTotal FROM Sales.SalesOrderDetail d INNER JOIN Sales.SalesOrderHeader h ON d.SalesOrderID = h.SalesOrderID") in Query
+

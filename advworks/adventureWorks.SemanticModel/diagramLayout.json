@@ -1,0 +1,118 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 134.80471919642622,
+            "y": -50
+          },
+          "nodeIndex": "Calendar",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 808.3072744732076
+          },
+          "nodeIndex": "DimCustomer",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 744.53397078680848,
+            "y": 307.03584054899977
+          },
+          "nodeIndex": "DimLocation",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 629.43530400969689,
+            "y": 486.85969570156692
+          },
+          "nodeIndex": "DimProduct",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50.388070472159086,
+            "y": 338.67053832210433
+          },
+          "nodeIndex": "DimTerritory",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 422.15002106919144,
+            "y": 206.78663404630947
+          },
+          "nodeIndex": "Fact_ProductInventory",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 339.86824476173706,
+            "y": 486.75089979961808
+          },
+          "nodeIndex": "Fact_Sales",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 978.53397078680848,
+            "y": 513.1536372366038
+          },
+          "nodeIndex": "Lang",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

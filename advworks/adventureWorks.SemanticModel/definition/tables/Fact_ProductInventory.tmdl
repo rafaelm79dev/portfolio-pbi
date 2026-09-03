@@ -1,0 +1,37 @@
+table Fact_ProductInventory
+	lineageTag: d1f3c3db-8290-4107-9175-10135e0840a8
+
+	measure 'Total Inventory' = SUM(Fact_ProductInventory[Quantity])
+		formatString: #,##0
+		displayFolder: Key Measures
+		lineageTag: 1cb2c6fc-7678-4a85-99af-3ceb5b1633f3
+
+	column ProductID
+		dataType: int64
+		lineageTag: 96a2f3a9-9fe8-4793-9d74-671c9926a0da
+		sourceColumn: ProductID
+
+	column LocationID
+		dataType: int64
+		lineageTag: a7a7fcdc-fe53-41e4-9b1d-98a1c63093c1
+		sourceColumn: LocationID
+
+	column Shelf
+		dataType: string
+		lineageTag: fda316ad-9814-47b1-907a-66c3f0628a73
+		sourceColumn: Shelf
+
+	column Bin
+		dataType: int64
+		lineageTag: b53ee22f-4ec0-4a7b-8a34-bb987855b675
+		sourceColumn: Bin
+
+	column Quantity
+		dataType: int64
+		lineageTag: 5c74d7f6-84ca-4e77-a5ac-8fc2ed7353f0
+		sourceColumn: Quantity
+
+	partition Fact_ProductInventory = m
+		mode: import
+		source = let Source = Sql.Database("localhost", "AdventureWorks"), Query = Value.NativeQuery(Source, "SELECT ProductID, LocationID, Shelf, Bin, Quantity FROM Production.ProductInventory") in Query
+

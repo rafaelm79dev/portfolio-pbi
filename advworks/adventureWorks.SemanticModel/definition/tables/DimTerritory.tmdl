@@ -1,0 +1,33 @@
+table DimTerritory
+	lineageTag: a8971c59-2859-414c-a3fb-719a5e8330f9
+
+	measure 'Territory Count' = DISTINCTCOUNT(DimTerritory[TerritoryID])
+		formatString: #,##0
+		displayFolder: Key Measures
+		lineageTag: 12791cc1-ebe3-4109-812f-d0d3b1536107
+
+	column TerritoryID
+		dataType: int64
+		isKey
+		lineageTag: b410c6ac-4bf2-4991-a960-3cddf8dc6dd0
+		sourceColumn: TerritoryID
+
+	column TerritoryName
+		dataType: string
+		lineageTag: c71b009c-6e8f-4ad9-b19f-81d0f61e68d1
+		sourceColumn: TerritoryName
+
+	column CountryRegionCode
+		dataType: string
+		lineageTag: 166e9871-1d5c-4e72-ac2b-6b91a6b3f8ee
+		sourceColumn: CountryRegionCode
+
+	column TerritoryGroup
+		dataType: string
+		lineageTag: 88ba6673-2691-435a-b083-c117e238baf6
+		sourceColumn: TerritoryGroup
+
+	partition DimTerritory = m
+		mode: import
+		source = let Source = Sql.Database("localhost", "AdventureWorks"), Query = Value.NativeQuery(Source, "SELECT TerritoryID, Name AS TerritoryName, CountryRegionCode, [Group] AS TerritoryGroup FROM Sales.SalesTerritory") in Query
+

@@ -1,0 +1,73 @@
+table DimProduct
+	lineageTag: fd41b12f-8896-4350-a070-f3500a7bd7e9
+
+	measure 'Avg Standard Cost' = AVERAGE(DimProduct[StandardCost])
+		formatString: $#,##0
+		displayFolder: Margin
+		lineageTag: 7a9852c6-8b8a-4f1a-a343-862d6b4ccc2f
+
+	measure 'Avg List Price' = AVERAGE(DimProduct[ListPrice])
+		formatString: $#,##0
+		displayFolder: Margin
+		lineageTag: 38b789a4-a15b-4e70-9b52-e33565b197f8
+
+	column ProductID
+		dataType: int64
+		isKey
+		lineageTag: daa53a65-ec76-4189-a6ac-1d23145adb49
+		sourceColumn: ProductID
+
+	column ProductName
+		dataType: string
+		lineageTag: 07da103e-42c4-4ddf-8b65-b3d11180e13a
+		sourceColumn: ProductName
+
+	column ProductNumber
+		dataType: string
+		lineageTag: 070e01d4-c9fd-4e8d-af32-d8e4df4afd24
+		sourceColumn: ProductNumber
+
+	column Color
+		dataType: string
+		lineageTag: e379b042-3c4a-4bdf-bf85-179bf4e810d1
+		sourceColumn: Color
+
+	column Size
+		dataType: string
+		lineageTag: 5dc7144b-66da-4079-bd32-e5a4d4e04681
+		sourceColumn: Size
+
+	column Weight
+		dataType: double
+		lineageTag: ee6a31b9-cb44-4240-9bc8-be56cd6c5443
+		sourceColumn: Weight
+
+	column StandardCost
+		dataType: double
+		lineageTag: bd42a34a-d4c6-40b4-87d3-a73b2006e338
+		sourceColumn: StandardCost
+
+	column ListPrice
+		dataType: double
+		lineageTag: db3f35d7-aa4c-4da9-84dc-42a2b6086a7e
+		sourceColumn: ListPrice
+
+	column SellStartDate
+		dataType: dateTime
+		lineageTag: 266b4dd6-5863-4d28-8152-628370e4e9de
+		sourceColumn: SellStartDate
+
+	column SubcategoryName
+		dataType: string
+		lineageTag: 1bd98846-cb9e-49e8-a796-6f5b9bcda093
+		sourceColumn: SubcategoryName
+
+	column CategoryName
+		dataType: string
+		lineageTag: 728d8563-8422-4a7a-939a-4a0d593ec5d9
+		sourceColumn: CategoryName
+
+	partition DimProduct = m
+		mode: import
+		source = let Source = Sql.Database("localhost", "AdventureWorks"), Query = Value.NativeQuery(Source, "SELECT p.ProductID, p.Name AS ProductName, p.ProductNumber, ISNULL(p.Color,'N/A') AS Color, p.Size, p.Weight, p.StandardCost, p.ListPrice, p.SellStartDate, ISNULL(sc.Name,'N/A') AS SubcategoryName, ISNULL(cat.Name,'N/A') AS CategoryName FROM Production.Product p LEFT JOIN Production.ProductSubcategory sc ON p.ProductSubcategoryID = sc.ProductSubcategoryID LEFT JOIN Production.ProductCategory cat ON sc.ProductCategoryID = cat.ProductCategoryID") in Query
+

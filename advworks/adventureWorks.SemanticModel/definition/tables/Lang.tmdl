@@ -1,0 +1,136 @@
+table Lang
+	lineageTag: 21706502-352d-452b-b302-deac16d99eb0
+
+	measure 'Title Total Sales' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "TOTAL SALES", "VENTAS TOTALES")
+		displayFolder: Labels
+		lineageTag: 8a47a21f-120f-4aee-8b64-feb5a1eeb7b2
+
+	measure 'Title Orders' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "ORDERS", "Ã“RDENES")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 5fc497ee-c2e7-49ec-b91b-8348f747247e
+
+	measure 'Title AOV' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "AVG ORDER VALUE", "TICKET PROMEDIO")
+		isHidden
+		displayFolder: Labels
+		lineageTag: bf476c51-d148-456e-b354-37d60d530661
+
+	measure 'Title Margin Pct KPI' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "GROSS MARGIN %", "MARGEN BRUTO %")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 0772b319-e1a8-4c60-a8a2-690dd9ef5c1c
+
+	measure 'Title Monthly Sales' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "MONTHLY SALES", "VENTAS MENSUALES")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 70422dd6-46b5-49b2-9ef5-e5ab8a99ec04
+
+	measure 'Title Territory Sales' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "SALES BY TERRITORY", "VENTAS POR TERRITORIO")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 7db35bdd-f386-4941-b9b7-39f77287f949
+
+	measure 'Title Top Products' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "TOP 10 PRODUCTS", "TOP 10 PRODUCTOS")
+		isHidden
+		displayFolder: Labels
+		lineageTag: e99f6b95-b33d-4e81-ab66-f5ab12723834
+
+	measure 'Title Online Split' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "STORE VS ONLINE", "TIENDA VS ONLINE")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 9f417d5e-a6ef-4f79-b752-67f3eeabe183
+
+	measure 'Title Total Cost' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "TOTAL COST", "COSTO TOTAL")
+		isHidden
+		displayFolder: Labels
+		lineageTag: c7c39070-c793-4297-b054-0018d75258e9
+
+	measure 'Title Gross Margin KPI' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "GROSS MARGIN $", "MARGEN BRUTO $")
+		isHidden
+		displayFolder: Labels
+		lineageTag: f7f76528-1a2f-48c9-95d9-763ffe0655ad
+
+	measure 'Title Margin Pct2 KPI' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "MARGIN %", "MARGEN %")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 5590c8ea-1b23-4327-bcc7-f1256beee5e9
+
+	measure 'Title Inventory KPI' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "TOTAL INVENTORY", "INVENTARIO TOTAL")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 519ff996-5543-474f-8dea-cdc5d6d94a23
+
+	measure 'Title Cost Vs Price' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "COST VS. AVG PRICE", "COSTO VS. PRECIO PROMEDIO")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 90d3a0f6-58dd-4f64-bb70-38bdf5784e40
+
+	measure 'Title Margin Extremes' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "LOWEST MARGIN PRODUCTS", "PRODUCTOS CON MENOR MARGEN")
+		isHidden
+		displayFolder: Labels
+		lineageTag: eb9933fc-5236-41b2-b793-7ba0e196431a
+
+	measure 'Title Margin By Category' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "MARGIN % BY CATEGORY", "MARGEN % POR CATEGORIA")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 4de39643-450d-49e6-bee6-9585ddb690aa
+
+	measure 'Title Territories' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "TERRITORIES", "TERRITORIOS")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 490482fd-d4ea-4fb0-88bf-9f17a6112078
+
+	measure 'Title Customers' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "TOTAL CUSTOMERS", "CLIENTES TOTALES")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 3c5a2b4d-c1ce-473a-b3f1-27909d6d629c
+
+	measure 'Title Store Customers' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "STORE CUSTOMERS", "CLIENTES TIENDA")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 16624a91-96f1-4b4e-bcd9-d7d7a12c3a8d
+
+	measure 'Title Individual Customers' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "INDIVIDUAL CUSTOMERS", "CLIENTES INDIVIDUALES")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 05d98a61-f899-4929-8789-a9bac9f3c4d8
+
+	measure 'Title Customer Type' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "CUSTOMER TYPE", "TIPO DE CLIENTE")
+		isHidden
+		displayFolder: Labels
+		lineageTag: b0426c7f-3ffa-4b21-8ae1-fc639b5058ad
+
+	measure 'Title Top Customers' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "TOP 10 CUSTOMERS", "TOP 10 CLIENTES")
+		isHidden
+		displayFolder: Labels
+		lineageTag: 3c92a2b7-4efa-45a6-84ba-8de407c4dd5c
+
+	measure 'Title Inventory Location' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "INVENTORY BY LOCATION", "INVENTARIO POR UBICACION")
+		isHidden
+		displayFolder: Labels
+		lineageTag: d2ee2748-9c5c-46cc-ba69-28ef8cfec42a
+
+	measure 'Title Page Sales' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "AdventureWorks - Sales Overview", "AdventureWorks - Resumen de Ventas")
+		isHidden
+		displayFolder: Labels
+
+	measure 'Title Page Margin' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "AdventureWorks - Product and Margin", "AdventureWorks - Producto y Margenes")
+		isHidden
+		displayFolder: Labels
+
+	measure 'Title Page Geo' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "AdventureWorks - Geography and Customers", "AdventureWorks - Geografia y Clientes")
+		isHidden
+		displayFolder: Labels
+
+	column Code
+		lineageTag: e7a3325c-8d70-4116-b7ce-5c5b8f2d3a3f
+		sourceColumn: [Value1]
+
+	column LanguageName
+		lineageTag: b6dcf158-b516-4830-977b-938e6dc8e2ab
+		sourceColumn: [Value2]
+
+	partition Lang = calculated
+		mode: import
+		source = {("en-US", "English"), ("es-ES", "Español")}
+
