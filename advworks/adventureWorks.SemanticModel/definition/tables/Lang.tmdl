@@ -113,14 +113,17 @@ table Lang
 	measure 'Title Page Sales' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "AdventureWorks - Sales Overview", "AdventureWorks - Resumen de Ventas")
 		isHidden
 		displayFolder: Labels
+		lineageTag: 11682578-4daf-4755-8edb-556c273fec34
 
 	measure 'Title Page Margin' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "AdventureWorks - Product and Margin", "AdventureWorks - Producto y Margenes")
 		isHidden
 		displayFolder: Labels
+		lineageTag: 3736638c-54f3-4212-8cca-c5dc55a56d84
 
 	measure 'Title Page Geo' = SWITCH(SELECTEDVALUE(Lang[Code]), "en-US", "AdventureWorks - Geography and Customers", "AdventureWorks - Geografia y Clientes")
 		isHidden
 		displayFolder: Labels
+		lineageTag: 34605e33-87f3-4cc8-8233-a967d7ecff27
 
 	column Code
 		lineageTag: e7a3325c-8d70-4116-b7ce-5c5b8f2d3a3f

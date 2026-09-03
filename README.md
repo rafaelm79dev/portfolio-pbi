@@ -17,7 +17,7 @@ Real-time weather data and forecasts for multiple locations, pulled live from th
 
 ### 🚲 [AdventureWorks Sales & Margin Analytics](advworks/)
 A hand-built star schema over the AdventureWorks OLTP dataset (SQL Server), with DAX time intelligence, a dark dashboard theme, and dynamic bilingual card/chart titles driven from a single language selector.
-**[→ Project details](advworks/README.md)**
+**[→ View published dashboard](https://app.powerbi.com/view?r=eyJrIjoiODY4MWQ3MjYtZGI4MC00OTEwLTllYzgtYWY1YTVjNWI5ODEzIiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)** · **[→ Project details](advworks/README.md)**
 
 ## 🚀 Prerequisites
 
@@ -64,7 +64,7 @@ Datos meteorológicos y pronósticos en tiempo real para múltiples ubicaciones,
 
 ### 🚲 [AdventureWorks Sales & Margin Analytics](advworks/)
 Un modelo en estrella armado a medida sobre el dataset OLTP de AdventureWorks (SQL Server), con time intelligence en DAX, tema oscuro, y títulos de tarjetas/gráficos bilingües dinámicos controlados desde un único selector de idioma.
-**[→ Detalles del proyecto](advworks/README.md)**
+**[→ Ver dashboard publicado](https://app.powerbi.com/view?r=eyJrIjoiODY4MWQ3MjYtZGI4MC00OTEwLTllYzgtYWY1YTVjNWI5ODEzIiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)** · **[→ Detalles del proyecto](advworks/README.md)**
 
 ## 🚀 Requisitos Previos
 

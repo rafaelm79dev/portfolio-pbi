@@ -15,10 +15,14 @@ This project takes the AdventureWorks sample database, loads it into a local SQL
 
 The report itself is a design exercise as much as a data one: a dark-themed, 3-page dashboard with an invented brand mark, gradient-highlighted "leader" bars, and card/chart titles that switch language live from a dropdown — all without duplicating a single visual.
 
+## 🔗 Published Dashboard
+
+**👉 [View Dashboard on Power BI Service](https://app.powerbi.com/view?r=eyJrIjoiODY4MWQ3MjYtZGI4MC00OTEwLTllYzgtYWY1YTVjNWI5ODEzIiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)**
+
 ## ✨ Features
 
 - 🏗️ **Hand-built star schema**: fact tables at line-item grain, conformed dimensions, a calculated calendar table — not a straight OLTP-to-report import
-- 📊 **3 report pages**: Sales Overview, Product & Margin, Geography & Customers
+- 📊 **3 report pages**: Sales Overview, Product and Margin, Geography and Customers
 - 🧮 **DAX time intelligence**: YTD, prior-year, and YoY% measures alongside margin and average-order-value calculations
 - 🌐 **Dynamic bilingual UI (English / Spanish)**: every card and chart title is a DAX measure bound to the visual's title via conditional formatting, switched live by a single language dropdown (synced across all 3 pages) — no duplicated visuals, no page duplication
 - 🎨 **Dark dashboard theme**: dark page background with light card/chart containers, per-metric accent colors (blue = sales, green = margin, orange = volume/stock, purple = geography/customers), and value-gradient bars that highlight the top performer in each ranked chart
@@ -29,7 +33,7 @@ The report itself is a design exercise as much as a data one: a dark-themed, 3-p
 
 ```
 advworks/
-├── adventureWorks.pbip                    # Main project file
+├── portfolio-pbi-adventureWorks.pbip       # Main project file
 ├── adventureWorks.Report/                 # Report definition
 │   ├── definition/
 │   │   └── pages/                         # sales_overview, product_margin, geo_customers
@@ -77,14 +81,14 @@ advworks/
 
 2. **Open the project in Power BI Desktop**
    - `File` → `Open` → `Open Power BI project`
-   - Select `adventureWorks.pbip`
+   - Select `portfolio-pbi-adventureWorks.pbip`
    - Power BI connects to the semantic model's tables, which pull from `Sql.Database("localhost", "AdventureWorks")`
 
 ## 📝 Usage
 
 1. Open the `.pbip` file in Power BI Desktop
 2. Use the **language dropdown** (top-right of each page) to switch every card/chart title between English and Spanish — the underlying data stays as-is
-3. Navigate the 3 pages via the tabs at the bottom: **Sales Overview** → **Product & Margin** → **Geography & Customers**
+3. Navigate the 3 pages via the tabs at the bottom: **Sales Overview** → **Product and Margin** → **Geography and Customers**
 
 ## 🛠️ Technologies Used
 
@@ -111,10 +115,14 @@ Este proyecto toma la base de datos de ejemplo AdventureWorks, la carga en una i
 
 El reporte en sí es tanto un ejercicio de diseño como de datos: un dashboard de 3 páginas con tema oscuro, una marca inventada, barras con degradado que resaltan al "líder" de cada ranking, y títulos de tarjetas/gráficos que cambian de idioma en vivo desde un selector — todo sin duplicar un solo visual.
 
+## 🔗 Dashboard Publicado
+
+**👉 [Ver Dashboard en Power BI Service](https://app.powerbi.com/view?r=eyJrIjoiODY4MWQ3MjYtZGI4MC00OTEwLTllYzgtYWY1YTVjNWI5ODEzIiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)**
+
 ## ✨ Características
 
 - 🏗️ **Modelo en estrella armado a medida**: tablas de hechos a nivel de línea, dimensiones conformadas, una tabla de calendario calculada — no es una importación directa del OLTP
-- 📊 **3 páginas de reporte**: Resumen de Ventas, Producto y Márgenes, Geografía y Clientes
+- 📊 **3 páginas de reporte**: Sales Overview, Product and Margin, Geography and Customers (las pestañas están en inglés; el contenido de adentro sí cambia con el selector de idioma)
 - 🧮 **Time intelligence en DAX**: medidas YTD, año anterior y variación % interanual, junto con margen y ticket promedio
 - 🌐 **UI bilingüe dinámica (Español / Inglés)**: cada título de tarjeta y gráfico es una medida DAX bindeada al título del visual vía formato condicional, que cambia en vivo desde un único selector de idioma (sincronizado entre las 3 páginas) — sin duplicar visuales ni páginas
 - 🎨 **Tema oscuro**: fondo de página oscuro con tarjetas/gráficos claros, color de acento por métrica (azul = ventas, verde = margen, naranja = volumen/stock, violeta = geografía/clientes), y barras con degradado que resaltan el valor más alto de cada ranking
@@ -125,7 +133,7 @@ El reporte en sí es tanto un ejercicio de diseño como de datos: un dashboard d
 
 ```
 advworks/
-├── adventureWorks.pbip                    # Archivo principal del proyecto
+├── portfolio-pbi-adventureWorks.pbip       # Archivo principal del proyecto
 ├── adventureWorks.Report/                 # Definición del reporte
 │   ├── definition/
 │   │   └── pages/                         # sales_overview, product_margin, geo_customers
@@ -173,14 +181,14 @@ advworks/
 
 2. **Abrir el proyecto en Power BI Desktop**
    - `Archivo` → `Abrir` → `Abrir proyecto de Power BI`
-   - Selecciona `adventureWorks.pbip`
+   - Selecciona `portfolio-pbi-adventureWorks.pbip`
    - Power BI conecta las tablas del modelo semántico, que leen desde `Sql.Database("localhost", "AdventureWorks")`
 
 ## 📝 Uso
 
 1. Abre el archivo `.pbip` en Power BI Desktop
 2. Usa el **selector de idioma** (arriba a la derecha de cada página) para cambiar todos los títulos de tarjetas/gráficos entre español e inglés — los datos en sí no cambian
-3. Navegá las 3 páginas con las pestañas de abajo: **Resumen de Ventas** → **Producto y Márgenes** → **Geografía y Clientes**
+3. Navegá las 3 páginas con las pestañas de abajo: **Sales Overview** → **Product and Margin** → **Geography and Customers**
 
 ## 🛠️ Tecnologías Utilizadas
 
