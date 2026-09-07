@@ -61,8 +61,8 @@ weather/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/tu-usuario/portfolio-pbi.git
-   cd portfolio-pbi/weather
+   git clone https://github.com/rafaelm79dev/porfolio-pbi.git
+   cd porfolio-pbi/weather
    ```
 
 2. **Open the project in Power BI Desktop**
@@ -201,8 +201,8 @@ weather/
 
 1. **Clonar el repositorio**
    ```bash
-   git clone https://github.com/tu-usuario/portfolio-pbi.git
-   cd portfolio-pbi/weather
+   git clone https://github.com/rafaelm79dev/porfolio-pbi.git
+   cd porfolio-pbi/weather
    ```
 
 2. **Abrir el proyecto en Power BI Desktop**

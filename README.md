@@ -27,8 +27,8 @@ A hand-built star schema over the AdventureWorks OLTP dataset (SQL Server), with
 ## 📦 Getting Started
 
 ```bash
-git clone https://github.com/tu-usuario/portfolio-pbi.git
-cd portfolio-pbi
+git clone https://github.com/rafaelm79dev/porfolio-pbi.git
+cd porfolio-pbi
 ```
 
 Then open whichever project's `.pbip` file in Power BI Desktop — see that project's README for specifics (data source setup, configuration).
@@ -74,8 +74,8 @@ Un modelo en estrella armado a medida sobre el dataset OLTP de AdventureWorks (S
 ## 📦 Cómo Empezar
 
 ```bash
-git clone https://github.com/tu-usuario/portfolio-pbi.git
-cd portfolio-pbi
+git clone https://github.com/rafaelm79dev/porfolio-pbi.git
+cd porfolio-pbi
 ```
 
 Luego abrí el archivo `.pbip` del proyecto que quieras en Power BI Desktop — ver el README de ese proyecto para detalles específicos (configuración de la fuente de datos, etc.).
