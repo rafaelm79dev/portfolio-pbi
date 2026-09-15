@@ -9,6 +9,18 @@
 
 Interactive Power BI dashboard that displays real-time weather data and forecasts for multiple locations using the new **PBIP** (Power BI Project) format.
 
+## 🎯 Skills Demonstrated
+
+`Power Query (M) / API Integration` · `Data Modeling` · `DAX` · `Dashboard Localization (EN/ES)` · `Power BI Desktop` · `PBIP / Git Version Control`
+
+## 💼 The Challenge & Approach
+
+**The problem:** comparing conditions across several travel destinations usually means checking multiple apps or sites one by one — no single, at-a-glance view, and nothing that speaks both English and Spanish for a bilingual audience.
+
+**The approach:** built live Power Query (M) connections straight to the [Open-Meteo](https://open-meteo.com/) API for each location, structured the current/hourly/daily data into a consistent model, and made every label in the report bilingual — driven by DAX and a language parameter, not duplicated pages.
+
+**The result:** a single dashboard that auto-refreshes from a public API with no gateway or manual upload, and reads naturally in either language from one dropdown.
+
 ## 📋 Description
 
 This project is a Power BI dashboard developed with the new **PBIP** file model that allows visualization of current weather data, hourly and daily forecasts for different locations around the world. Data is obtained in real-time from the [Open-Meteo](https://open-meteo.com/) API using Power Query and TMDL (Tabular Model Definition Language). The report is fully bilingual, supporting both **English** and **Spanish** languages.
@@ -18,6 +30,8 @@ This project is a Power BI dashboard developed with the new **PBIP** file model 
 **👉 [View Dashboard on Power BI Service](https://app.powerbi.com/view?r=eyJrIjoiMmU4MzEwYmYtZWM5ZC00ZjQyLWFmY2UtMThkM2UzMDc0YzI0IiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)**
 
 Explore the interactive dashboard published on Power BI Service with real-time weather data.
+
+<p align="center"><img src="screenshots/forecast.png" alt="Weather dashboard forecast page" width="700"></p>
 
 ## ✨ Features
 
@@ -61,8 +75,8 @@ weather/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/rafaelm79dev/porfolio-pbi.git
-   cd porfolio-pbi/weather
+   git clone https://github.com/rafaelm79dev/portfolio-pbi.git
+   cd portfolio-pbi/weather
    ```
 
 2. **Open the project in Power BI Desktop**
@@ -149,6 +163,18 @@ The project currently includes data for:
 
 Dashboard interactivo de Power BI que muestra datos meteorológicos en tiempo real y pronósticos para múltiples ubicaciones utilizando el nuevo formato **PBIP** (Power BI Project).
 
+## 🎯 Habilidades Demostradas
+
+`Power Query (M) / Integración de APIs` · `Modelado de Datos` · `DAX` · `Localización de Dashboards (EN/ES)` · `Power BI Desktop` · `PBIP / Control de Versiones con Git`
+
+## 💼 El Desafío y el Enfoque
+
+**El problema:** comparar el clima entre varios destinos de viaje suele implicar chequear varias apps o sitios uno por uno — sin una vista única de un vistazo, y sin nada que hable español e inglés para una audiencia bilingüe.
+
+**El enfoque:** construí conexiones de Power Query (M) en vivo directo a la API de [Open-Meteo](https://open-meteo.com/) para cada ubicación, estructuré los datos actuales/horarios/diarios en un modelo consistente, e hice que cada etiqueta del reporte sea bilingüe — manejada con DAX y un parámetro de idioma, no con páginas duplicadas.
+
+**El resultado:** un solo dashboard que se actualiza solo desde una API pública sin gateway ni carga manual, y que se lee naturalmente en cualquiera de los dos idiomas desde un selector.
+
 ## 📋 Descripción
 
 Este proyecto es un dashboard de Power BI desarrollado con el nuevo modelo de archivos **PBIP** que permite visualizar datos meteorológicos actuales, pronósticos horarios y diarios de diferentes ubicaciones alrededor del mundo. Los datos se obtienen en tiempo real desde la API de [Open-Meteo](https://open-meteo.com/) utilizando Power Query y TMDL (Tabular Model Definition Language). El reporte es completamente bilingüe, soportando tanto **Español** como **Inglés**.
@@ -158,6 +184,8 @@ Este proyecto es un dashboard de Power BI desarrollado con el nuevo modelo de ar
 **👉 [Ver Dashboard en Power BI Service](https://app.powerbi.com/view?r=eyJrIjoiMmU4MzEwYmYtZWM5ZC00ZjQyLWFmY2UtMThkM2UzMDc0YzI0IiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)**
 
 Explora el dashboard interactivo publicado en Power BI Service con datos meteorológicos en tiempo real.
+
+<p align="center"><img src="screenshots/forecast.png" alt="Página de pronóstico del dashboard de clima" width="700"></p>
 
 ## ✨ Características
 
@@ -201,8 +229,8 @@ weather/
 
 1. **Clonar el repositorio**
    ```bash
-   git clone https://github.com/rafaelm79dev/porfolio-pbi.git
-   cd porfolio-pbi/weather
+   git clone https://github.com/rafaelm79dev/portfolio-pbi.git
+   cd portfolio-pbi/weather
    ```
 
 2. **Abrir el proyecto en Power BI Desktop**

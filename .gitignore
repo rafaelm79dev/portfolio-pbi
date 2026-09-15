@@ -1,2 +1,7 @@
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
+adventureworks/*.csv
+adventureworks/import_log*.txt
+**/__pycache__/
+*.pyc
+.claude/

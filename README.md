@@ -11,13 +11,17 @@ A collection of Power BI dashboards, all built with the **PBIP** (Power BI Proje
 
 ## 📁 Projects
 
-### 🌤️ [Weather Dashboard](weather/)
-Real-time weather data and forecasts for multiple locations, pulled live from the Open-Meteo API. Bilingual (English/Spanish) with dynamic language switching.
-**[→ View published dashboard](https://app.powerbi.com/view?r=eyJrIjoiMmU4MzEwYmYtZWM5ZC00ZjQyLWFmY2UtMThkM2UzMDc0YzI0IiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)** · **[→ Project details](weather/README.md)**
-
 ### 🚲 [AdventureWorks Sales & Margin Analytics](advworks/)
+<a href="advworks/"><img src="advworks/screenshots/sales-overview.png" alt="AdventureWorks dashboard preview" width="420"></a>
+
 A hand-built star schema over the AdventureWorks OLTP dataset (SQL Server), with DAX time intelligence, a dark dashboard theme, and dynamic bilingual card/chart titles driven from a single language selector.
 **[→ View published dashboard](https://app.powerbi.com/view?r=eyJrIjoiODY4MWQ3MjYtZGI4MC00OTEwLTllYzgtYWY1YTVjNWI5ODEzIiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)** · **[→ Project details](advworks/README.md)**
+
+### 🌤️ [Weather Dashboard](weather/)
+<a href="weather/"><img src="weather/screenshots/forecast.png" alt="Weather dashboard preview" width="420"></a>
+
+Real-time weather data and forecasts for multiple locations, pulled live from the Open-Meteo API. Bilingual (English/Spanish) with dynamic language switching.
+**[→ View published dashboard](https://app.powerbi.com/view?r=eyJrIjoiMmU4MzEwYmYtZWM5ZC00ZjQyLWFmY2UtMThkM2UzMDc0YzI0IiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)** · **[→ Project details](weather/README.md)**
 
 ## 🚀 Prerequisites
 
@@ -27,8 +31,8 @@ A hand-built star schema over the AdventureWorks OLTP dataset (SQL Server), with
 ## 📦 Getting Started
 
 ```bash
-git clone https://github.com/rafaelm79dev/porfolio-pbi.git
-cd porfolio-pbi
+git clone https://github.com/rafaelm79dev/portfolio-pbi.git
+cd portfolio-pbi
 ```
 
 Then open whichever project's `.pbip` file in Power BI Desktop — see that project's README for specifics (data source setup, configuration).
@@ -58,13 +62,17 @@ Una colección de dashboards de Power BI, todos construidos con el formato **PBI
 
 ## 📁 Proyectos
 
-### 🌤️ [Weather Dashboard](weather/)
-Datos meteorológicos y pronósticos en tiempo real para múltiples ubicaciones, obtenidos en vivo desde la API de Open-Meteo. Bilingüe (Español/Inglés) con cambio dinámico de idioma.
-**[→ Ver dashboard publicado](https://app.powerbi.com/view?r=eyJrIjoiMmU4MzEwYmYtZWM5ZC00ZjQyLWFmY2UtMThkM2UzMDc0YzI0IiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)** · **[→ Detalles del proyecto](weather/README.md)**
-
 ### 🚲 [AdventureWorks Sales & Margin Analytics](advworks/)
+<a href="advworks/"><img src="advworks/screenshots/sales-overview.png" alt="Vista previa del dashboard AdventureWorks" width="420"></a>
+
 Un modelo en estrella armado a medida sobre el dataset OLTP de AdventureWorks (SQL Server), con time intelligence en DAX, tema oscuro, y títulos de tarjetas/gráficos bilingües dinámicos controlados desde un único selector de idioma.
 **[→ Ver dashboard publicado](https://app.powerbi.com/view?r=eyJrIjoiODY4MWQ3MjYtZGI4MC00OTEwLTllYzgtYWY1YTVjNWI5ODEzIiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)** · **[→ Detalles del proyecto](advworks/README.md)**
+
+### 🌤️ [Weather Dashboard](weather/)
+<a href="weather/"><img src="weather/screenshots/forecast.png" alt="Vista previa del dashboard de clima" width="420"></a>
+
+Datos meteorológicos y pronósticos en tiempo real para múltiples ubicaciones, obtenidos en vivo desde la API de Open-Meteo. Bilingüe (Español/Inglés) con cambio dinámico de idioma.
+**[→ Ver dashboard publicado](https://app.powerbi.com/view?r=eyJrIjoiMmU4MzEwYmYtZWM5ZC00ZjQyLWFmY2UtMThkM2UzMDc0YzI0IiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)** · **[→ Detalles del proyecto](weather/README.md)**
 
 ## 🚀 Requisitos Previos
 
@@ -74,8 +82,8 @@ Un modelo en estrella armado a medida sobre el dataset OLTP de AdventureWorks (S
 ## 📦 Cómo Empezar
 
 ```bash
-git clone https://github.com/rafaelm79dev/porfolio-pbi.git
-cd porfolio-pbi
+git clone https://github.com/rafaelm79dev/portfolio-pbi.git
+cd portfolio-pbi
 ```
 
 Luego abrí el archivo `.pbip` del proyecto que quieras en Power BI Desktop — ver el README de ese proyecto para detalles específicos (configuración de la fuente de datos, etc.).

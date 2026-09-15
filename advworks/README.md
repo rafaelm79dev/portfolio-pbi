@@ -9,15 +9,34 @@
 
 A Power BI portfolio dashboard built on the classic **AdventureWorks OLTP** dataset, using the **PBIP** (Power BI Project) format with a hand-built star schema, DAX time intelligence, and a fully bilingual, dynamically-themed report.
 
-## 📋 Description
+## 🎯 Skills Demonstrated
 
-This project takes the AdventureWorks sample database, loads it into a local SQL Server instance, and builds a purpose-designed star schema on top of it — rather than importing the OLTP tables as-is. It focuses on **Sales** and **Product / Inventory margin** analysis: order-line grain sales, product cost vs. list price, territory and customer performance, and stock levels.
+`Data Modeling (Star Schema)` · `DAX (Time Intelligence, Margin Calcs)` · `SQL Server` · `Power Query (M)` · `Report Design & Theming` · `Dashboard Localization (EN/ES)` · `PBIP / Git Version Control`
 
-The report itself is a design exercise as much as a data one: a dark-themed, 3-page dashboard with an invented brand mark, gradient-highlighted "leader" bars, and card/chart titles that switch language live from a dropdown — all without duplicating a single visual.
+## 💼 The Challenge & Approach
+
+**The problem:** raw OLTP transaction data tells you what sold, but not what's actually profitable. Sales, cost, and customer data live in dozens of normalized tables at different grains — not something a stakeholder can open and read, and not something DAX can calculate against efficiently.
+
+**The approach:** rather than importing the OLTP tables as-is, I designed a purpose-built star schema on top of the source data (SQL Server) — fact tables at line-item grain, conformed dimensions, a proper calendar table — then layered DAX time-intelligence and margin measures on top. The report itself is a design exercise as much as a data one: a dark-themed, 3-page dashboard with an invented brand mark, gradient-highlighted "leader" bars, and card/chart titles that switch language live from a dropdown — all without duplicating a single visual.
+
+**The result:** a dashboard that surfaces insights the raw data hides — for example, several Clothing products turned out to be selling *below* their standard cost (as low as **-27.7% margin**), invisible at the category-revenue level but obvious once cost and margin are modeled properly.
 
 ## 🔗 Published Dashboard
 
 **👉 [View Dashboard on Power BI Service](https://app.powerbi.com/view?r=eyJrIjoiODY4MWQ3MjYtZGI4MC00OTEwLTllYzgtYWY1YTVjNWI5ODEzIiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)**
+
+<table>
+<tr>
+<td><img src="screenshots/sales-overview.png" alt="Sales Overview page" width="280"></td>
+<td><img src="screenshots/product-and-margin.png" alt="Product and Margin page" width="280"></td>
+<td><img src="screenshots/geography-and-customers.png" alt="Geography and Customers page" width="280"></td>
+</tr>
+<tr>
+<td align="center"><sub>Sales Overview</sub></td>
+<td align="center"><sub>Product and Margin</sub></td>
+<td align="center"><sub>Geography and Customers</sub></td>
+</tr>
+</table>
 
 ## ✨ Features
 
@@ -73,11 +92,13 @@ advworks/
 
 ## 📦 Installation
 
-1. **Load the data source** (once)
+1. **Get the AdventureWorks OLTP CSVs** (not included in this repo — see [Note on the raw dataset](#note-on-the-raw-dataset))
+
+2. **Load the data source** (once)
    ```bash
    sqlcmd -S localhost -C -i ../adventureworks/instawdb.sql
    ```
-   This creates and populates the `AdventureWorks` database from the CSVs in `../adventureworks/`.
+   `instawdb.sql` expects the CSVs to sit alongside it in `../adventureworks/` — adjust the `SqlSamplesSourceDataPath` variable near the top of the script to an absolute path if needed. It creates and populates the `AdventureWorks` database from those CSVs.
 
 2. **Open the project in Power BI Desktop**
    - `File` → `Open` → `Open Power BI project`
@@ -98,6 +119,10 @@ advworks/
 - **DAX**: measures, time intelligence, and the bilingual title-switching logic
 - **pbi-cli**: scripted model and report authoring (tables, relationships, measures, visuals, conditional formatting) against a live Power BI Desktop session
 
+## 📌 Note on the Raw Dataset
+
+The `../adventureworks/` folder ships `instawdb.sql` (the install script, with a couple of BULK INSERT fixes applied) but **not** the ~90MB of source CSVs — they're Microsoft's own sample data, not something worth bloating a portfolio repo with. Grab them from Microsoft's [AdventureWorks samples](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure) and drop them into `../adventureworks/` before running the script.
+
 ## 🙏 Acknowledgments
 
 - Microsoft's [AdventureWorks sample databases](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure) for the source dataset
@@ -109,15 +134,34 @@ advworks/
 
 Un dashboard de portfolio en Power BI construido sobre la clásica base de datos **AdventureWorks OLTP**, usando el formato **PBIP** (Power BI Project) con un modelo en estrella armado a medida, time intelligence en DAX, y un reporte bilingüe con tema dinámico.
 
-## 📋 Descripción
+## 🎯 Habilidades Demostradas
 
-Este proyecto toma la base de datos de ejemplo AdventureWorks, la carga en una instancia local de SQL Server, y construye encima un modelo en estrella diseñado a medida — en vez de importar las tablas OLTP tal cual. Se enfoca en análisis de **Ventas** y **Margen de Producto/Inventario**: ventas a nivel de línea de orden, costo vs. precio de lista por producto, performance por territorio y cliente, y niveles de stock.
+`Modelado de Datos (Star Schema)` · `DAX (Time Intelligence, Cálculo de Márgenes)` · `SQL Server` · `Power Query (M)` · `Diseño y Theming de Reportes` · `Localización de Dashboards (EN/ES)` · `PBIP / Control de Versiones con Git`
 
-El reporte en sí es tanto un ejercicio de diseño como de datos: un dashboard de 3 páginas con tema oscuro, una marca inventada, barras con degradado que resaltan al "líder" de cada ranking, y títulos de tarjetas/gráficos que cambian de idioma en vivo desde un selector — todo sin duplicar un solo visual.
+## 💼 El Desafío y el Enfoque
+
+**El problema:** los datos transaccionales crudos dicen qué se vendió, pero no qué es realmente rentable. Ventas, costos y clientes viven en decenas de tablas normalizadas a distinto grano — algo que ningún stakeholder puede abrir y leer, y que DAX no puede calcular de forma eficiente tal cual está.
+
+**El enfoque:** en vez de importar las tablas OLTP tal cual, diseñé un modelo en estrella a medida sobre la fuente (SQL Server) — tablas de hechos a nivel de línea, dimensiones conformadas, una tabla de calendario propiamente dicha — y encima medidas DAX de time intelligence y margen. El reporte en sí es tanto un ejercicio de diseño como de datos: un dashboard de 3 páginas con tema oscuro, una marca inventada, barras con degradado que resaltan al "líder" de cada ranking, y títulos de tarjetas/gráficos que cambian de idioma en vivo desde un selector — todo sin duplicar un solo visual.
+
+**El resultado:** un dashboard que revela lo que los datos crudos esconden — por ejemplo, varios productos de la categoría Indumentaria resultaron venderse *por debajo* de su costo estándar (hasta **-27.7% de margen**), algo invisible a nivel de ingresos por categoría pero evidente una vez que se modela bien el costo y el margen.
 
 ## 🔗 Dashboard Publicado
 
 **👉 [Ver Dashboard en Power BI Service](https://app.powerbi.com/view?r=eyJrIjoiODY4MWQ3MjYtZGI4MC00OTEwLTllYzgtYWY1YTVjNWI5ODEzIiwidCI6Ijg2ZDVlYWY3LWNjOGEtNDkzMC04MjhlLWIwNGJmYzlhYzQ1ZiJ9)**
+
+<table>
+<tr>
+<td><img src="screenshots/sales-overview.png" alt="Página Resumen de Ventas" width="280"></td>
+<td><img src="screenshots/product-and-margin.png" alt="Página Producto y Márgenes" width="280"></td>
+<td><img src="screenshots/geography-and-customers.png" alt="Página Geografía y Clientes" width="280"></td>
+</tr>
+<tr>
+<td align="center"><sub>Resumen de Ventas</sub></td>
+<td align="center"><sub>Producto y Márgenes</sub></td>
+<td align="center"><sub>Geografía y Clientes</sub></td>
+</tr>
+</table>
 
 ## ✨ Características
 
@@ -173,11 +217,13 @@ advworks/
 
 ## 📦 Instalación
 
-1. **Cargar la fuente de datos** (una sola vez)
+1. **Conseguí los CSV de AdventureWorks OLTP** (no están incluidos en este repo — ver [Nota sobre el dataset crudo](#nota-sobre-el-dataset-crudo))
+
+2. **Cargar la fuente de datos** (una sola vez)
    ```bash
    sqlcmd -S localhost -C -i ../adventureworks/instawdb.sql
    ```
-   Esto crea y carga la base `AdventureWorks` a partir de los CSV en `../adventureworks/`.
+   `instawdb.sql` espera que los CSV estén junto a él en `../adventureworks/` — ajustá la variable `SqlSamplesSourceDataPath` al principio del script a una ruta absoluta si hace falta. Crea y carga la base `AdventureWorks` a partir de esos CSV.
 
 2. **Abrir el proyecto en Power BI Desktop**
    - `Archivo` → `Abrir` → `Abrir proyecto de Power BI`
@@ -197,6 +243,10 @@ advworks/
 - **TMDL**: Tabular Model Definition Language para el modelo semántico
 - **DAX**: medidas, time intelligence, y la lógica de cambio de idioma dinámico
 - **pbi-cli**: autoría scripteada del modelo y el reporte (tablas, relaciones, medidas, visuales, formato condicional) contra una sesión en vivo de Power BI Desktop
+
+## 📌 Nota sobre el Dataset Crudo
+
+La carpeta `../adventureworks/` incluye `instawdb.sql` (el script de instalación, con un par de fixes en los BULK INSERT aplicados) pero **no** los ~90MB de CSV originales — son datos de ejemplo de Microsoft, no algo que valga la pena inflar en un repo de portfolio. Descargalos de las [bases de datos de ejemplo AdventureWorks](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure) de Microsoft y ponelos en `../adventureworks/` antes de correr el script.
 
 ## 🙏 Agradecimientos
 
