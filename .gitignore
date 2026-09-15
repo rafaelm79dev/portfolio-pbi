@@ -5,3 +5,4 @@ adventureworks/import_log*.txt
 **/__pycache__/
 *.pyc
 .claude/
+*.bak
